@@ -8,8 +8,7 @@ using namespace RS::Graphics::Detail;
 
 void test_rs_graphics_root_finding_newton_raphson_float() {
 
-    auto k = 0.0f;
-    auto x = 0.0f;
+    float k, x;
     auto root1 = 0.865'474f;
 
     auto f = [&k] (float x) { return std::cos(k * x) - std::pow(k * x, 3.0f); };
@@ -20,15 +19,16 @@ void test_rs_graphics_root_finding_newton_raphson_float() {
     for (auto i = 1; i <= 1024; i *= 2) {
         k = static_cast<float>(i);
         TRY(x = nr.solve(1.0f, 0.0f));
-        TEST_NEAR(x, root1 / i, 1e-5f / i);
+        TEST_NEAR(x, root1 / k, 1e-5f / k);
         TEST_NEAR(nr.error, 0.0f, 1e-5f);
         TEST(nr.iterations < 25);
     }
 
     for (auto i = 2; i <= 1024; i *= 2) {
-        k = 1.0f / static_cast<float>(i);
+        auto fpi = static_cast<float>(i);
+        k = 1.0f / fpi;
         TRY(x = nr.solve(1.0f, 0.0f));
-        TEST_NEAR(x, root1 * i, 1e-5f * i);
+        TEST_NEAR(x, root1 * fpi, 1e-5f * fpi);
         TEST_NEAR(nr.error, 0.0f, 1e-5f);
         TEST(nr.iterations < 25);
     }
@@ -37,8 +37,7 @@ void test_rs_graphics_root_finding_newton_raphson_float() {
 
 void test_rs_graphics_root_finding_newton_raphson_double() {
 
-    auto k = 0.0;
-    auto x = 0.0;
+    double k, x;
     auto root1 = 0.865'474'033'1;
 
     auto f = [&k] (double x) { return std::cos(k * x) - std::pow(k * x, 3.0); };
@@ -49,15 +48,16 @@ void test_rs_graphics_root_finding_newton_raphson_double() {
     for (auto i = 1; i <= 1024; i *= 2) {
         k = static_cast<double>(i);
         TRY(x = nr.solve(1.0, 0.0));
-        TEST_NEAR(x, root1 / i, 1e-10 / i);
+        TEST_NEAR(x, root1 / k, 1e-10 / k);
         TEST_NEAR(nr.error, 0.0, 1e-10);
         TEST(nr.iterations < 25);
     }
 
     for (auto i = 2; i <= 1024; i *= 2) {
-        k = 1.0 / static_cast<double>(i);
+        auto fpi = static_cast<double>(i);
+        k = 1.0 / fpi;
         TRY(x = nr.solve(1.0, 0.0));
-        TEST_NEAR(x, root1 * i, 1e-10 * i);
+        TEST_NEAR(x, root1 * fpi, 1e-10 * fpi);
         TEST_NEAR(nr.error, 0.0, 1e-10);
         TEST(nr.iterations < 25);
     }

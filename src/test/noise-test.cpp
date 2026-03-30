@@ -195,7 +195,7 @@ void test_rs_graphics_noise_statistics() {
         TRY(source.octaves(oct));
         TRY(source.seed(86));
         Double2 point;
-        double epsilon = base_epsilon / oct;
+        double epsilon = base_epsilon / static_cast<double>(oct);
         double x = 0;
         double min = 1e99;
         double max = -1e99;
@@ -236,7 +236,7 @@ void test_rs_graphics_noise_statistics() {
         TRY(source.octaves(oct));
         TRY(source.seed(99));
         Double3 point;
-        double epsilon = base_epsilon / oct;
+        double epsilon = base_epsilon / static_cast<double>(oct);
         double x = 0;
         double min = 1e99;
         double max = -1e99;

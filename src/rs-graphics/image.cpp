@@ -20,6 +20,7 @@
     #pragma GCC diagnostic push
     #pragma GCC diagnostic ignored "-Wfloat-conversion"
     #pragma GCC diagnostic ignored "-Wimplicit-int-conversion"
+    #pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
     #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
     #pragma GCC diagnostic ignored "-Wsign-compare"
     #pragma GCC diagnostic ignored "-Wsign-conversion"
