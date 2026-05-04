@@ -26,7 +26,9 @@ My library of basic graphics classes, highly generalized and templated.
 ## Using the library
 
 You will need my header-only
-[core utility library](https://github.com/CaptainCrowbar/rs-core).
+[core utility library](https://github.com/CaptainCrowbar/rs-core)
+and my
+[Unicde library](https://github.com/CaptainCrowbar/rs-unicode).
 
 There is a `CMakeLists.txt` file that can build and install the library using
 the usual [CMake](https://cmake.org) conventions. Command line usage will
