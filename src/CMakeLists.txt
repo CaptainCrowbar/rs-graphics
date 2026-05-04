@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.30)
 # and propagate the new version to version.hpp.
 
 project(rs-graphics
-    VERSION 0.1.2
+    VERSION 0.1.3
     LANGUAGES CXX
 )
 
@@ -64,7 +64,6 @@ add_executable(${unittest}
     test/geometry-test.cpp
     test/image-test.cpp
     test/noise-test.cpp
-    test/root-finding-test.cpp
     test/projection-test.cpp
     test/version-test.cpp
     test/unit-test.cpp

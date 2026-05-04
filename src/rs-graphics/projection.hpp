@@ -1,9 +1,9 @@
 #pragma once
 
-#include "rs-graphics/root-finding.hpp"
 #include "rs-core/arithmetic.hpp"
 #include "rs-core/enum.hpp"
 #include "rs-core/linear-algebra.hpp"
+#include "rs-core/root-finding.hpp"
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -861,7 +861,7 @@ namespace RS::Graphics {
             T ph = polar[0];
             T theta = std::clamp(polar[1], T{0}, pi_v<T>);
             T c = (2 + pi_v<T> / 2) * std::cos(theta);
-            T t = Detail::newton_raphson<T>(
+            T t = newton_raphson<T>(
                 [c] (T x) { return x + std::sin(x) * (2 + std::cos(x)) - c; },
                 [] (T x) { return 2 * std::cos(x) * (1 + std::cos(x));
             }).solve();
@@ -919,7 +919,7 @@ namespace RS::Graphics {
             T ph = polar[0];
             T theta = std::clamp(polar[1], T{0}, pi_v<T>);
             T cos_theta = std::cos(theta);
-            T t = Detail::newton_raphson<T>(
+            T t = newton_raphson<T>(
                 [cos_theta] (T x) { return 2 * x + std::sin(2 * x) - pi_v<T> * cos_theta; },
                 [] (T x) { return 2 + 2 * std::cos(2 * x);
             }).solve();

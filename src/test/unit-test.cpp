@@ -54,8 +54,6 @@ void test_rs_graphics_noise_result_stability();
 void test_rs_graphics_noise_multiple_sources();
 void test_rs_graphics_noise_statistics();
 void test_rs_graphics_noise_sample_renders();
-void test_rs_graphics_root_finding_newton_raphson_float();
-void test_rs_graphics_root_finding_newton_raphson_double();
 void test_rs_graphics_projection_polar_coordinate_normalisation();
 void test_rs_graphics_projection_azimuthal_equidistant();
 void test_rs_graphics_projection_gnomonic();
@@ -129,8 +127,6 @@ int main(int argc, char** argv) {
     call_me_maybe(test_rs_graphics_noise_multiple_sources, "test_rs_graphics_noise_multiple_sources");
     call_me_maybe(test_rs_graphics_noise_statistics, "test_rs_graphics_noise_statistics");
     call_me_maybe(test_rs_graphics_noise_sample_renders, "test_rs_graphics_noise_sample_renders");
-    call_me_maybe(test_rs_graphics_root_finding_newton_raphson_float, "test_rs_graphics_root_finding_newton_raphson_float");
-    call_me_maybe(test_rs_graphics_root_finding_newton_raphson_double, "test_rs_graphics_root_finding_newton_raphson_double");
     call_me_maybe(test_rs_graphics_projection_polar_coordinate_normalisation, "test_rs_graphics_projection_polar_coordinate_normalisation");
     call_me_maybe(test_rs_graphics_projection_azimuthal_equidistant, "test_rs_graphics_projection_azimuthal_equidistant");
     call_me_maybe(test_rs_graphics_projection_gnomonic, "test_rs_graphics_projection_gnomonic");
