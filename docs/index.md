@@ -16,6 +16,7 @@ My library of basic graphics classes, highly generalized and templated.
 
 * [`rs-graphics/colour.hpp` -- Colour](colour.html)
 * [`rs-graphics/colour-space.hpp` -- Colour space](colour-space.html)
+* [`rs-graphics/font.hpp` -- Font](geometry.html)
 * [`rs-graphics/geometry.hpp` -- Geometric primitives](geometry.html)
 * [`rs-graphics/image.hpp` -- Image](image.html)
 * [`rs-graphics/noise.hpp` -- Pseudo-random noise](noise.html)

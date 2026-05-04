@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.30)
 # and propagate the new version to version.hpp.
 
 project(rs-graphics
-    VERSION 0.1.1
+    VERSION 0.1.2
     LANGUAGES CXX
 )
 
@@ -42,10 +42,13 @@ set(unittest test-rs-graphics)
 
 set(linklibs
     PRIVATE ${library}
+    PRIVATE rs-unicode
+    PRIVATE pcre2-8
     PRIVATE Threads::Threads
 )
 
 add_library(${library} STATIC
+    rs-graphics/font.cpp
     rs-graphics/image.cpp
 )
 
@@ -57,6 +60,7 @@ add_executable(${unittest}
     test/colour-conversion-test.cpp
     test/colour-interpolation-test.cpp
     test/colour-string-test.cpp
+    test/font-test.cpp
     test/geometry-test.cpp
     test/image-test.cpp
     test/noise-test.cpp
